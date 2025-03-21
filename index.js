@@ -13,7 +13,7 @@ app.use(express.json())
 app.use(express.static("dist"))
 app.use(cookieParser())
 app.use(cors({
-    origin: "https://ecom-23wo.onrender.com",
+    origin: "https://ecomerce-u22q.onrender.com",
     credentials: true
 }))
 app.use("/api/auth", require("./routes/auth.routes"))
@@ -23,7 +23,7 @@ app.use("/api/public", require("./routes/public.route"))
 app.use("/api/user", userProtected, require("./routes/user.route"))
 
 app.use("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "dist", "index.html"))    
+    res.sendFile(path.join(__dirname, "dist", "index.html"))
 
 })
 app.use((err, req, res, next) => {
